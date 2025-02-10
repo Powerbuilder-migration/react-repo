@@ -8,7 +8,7 @@ import {
   MenuItem,
   Button,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 
 interface MenuItemType {
@@ -61,7 +61,7 @@ const menuItems: MenuItemType[] = [
 const MainAppBar: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [currentMenu, setCurrentMenu] = useState<string | null>(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, menuId: string) => {
     setAnchorEl(event.currentTarget);
@@ -74,11 +74,6 @@ const MainAppBar: React.FC = () => {
   };
 
   const handleMenuItemClick = (path?: string, action?: () => void) => {
-    if (path) {
-      navigate(path);
-    } else if (action) {
-      action();
-    }
     handleMenuClose();
   };
 
