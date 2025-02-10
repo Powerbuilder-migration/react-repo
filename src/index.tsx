@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
+import NotFoundPage from './components/notFoundPage.tsx';
 import { QueryClient, QueryClientProvider } from 'react-query';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const queryClient = new QueryClient();
 
@@ -12,7 +13,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <QueryClientProvider client={queryClient}>
-    <App />
+   <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+  </BrowserRouter>
   </QueryClientProvider>
 );
 
