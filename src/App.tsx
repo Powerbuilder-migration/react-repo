@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import MainAppBar  from './components/menu';
+//import MainAppBar  from './components/menu.tsx';
+import MainAppBar from './components/menu.tsx';
 
 const App:React.FC = () =>{
   return (
