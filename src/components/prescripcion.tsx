@@ -10,6 +10,8 @@ import {
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import ScienceIcon from "@mui/icons-material/Science";
 import MedicationIcon from "@mui/icons-material/Medication";
+import RegistroMedicoContainer from "../views/RegistroMedicoContainer.tsx";
+import { GridForms } from './Prescripcion/index.ts';
 
 interface PrescripcionData {
   id: number,
@@ -132,7 +134,9 @@ const Prescripcion = ({ prescripcion }: PrescripcionProp) => {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>{selectedProduct?.nombre}</DialogTitle>
         <DialogContent>
-          <p>{selectedProduct?.descripcion}</p>
+         <RegistroMedicoContainer>
+            <GridForms />
+          </RegistroMedicoContainer>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
