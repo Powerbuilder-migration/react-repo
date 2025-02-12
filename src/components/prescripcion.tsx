@@ -11,11 +11,24 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import ScienceIcon from "@mui/icons-material/Science";
 import MedicationIcon from "@mui/icons-material/Medication";
 
-type PrescripcionProps = {
-  
+interface PrescripcionData {
+  id: number,
+  tipo: string | null,
+  iap: string | null,
+  tr: string | null,
+  vmed: boolean,
+  vfar: boolean,
+  producto: {
+    nombre: string,
+    descripcion: string,
+  },
+};
+
+type PrescripcionProp = {
+  prescripcion: PrescripcionData[];
 }
 
-const Prescripcion = ({ prescripcion }) => {
+const Prescripcion = ({ prescripcion }: PrescripcionProp) => {
   const [open, setOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<{
     nombre: string;
